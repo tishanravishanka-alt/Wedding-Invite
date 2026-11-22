@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tishan & Kaveesha | Wedding Invitation — July 9, 2027</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cormorant Garamond, Cinzel & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ivory: '#FCFBF7',
+                        cream: '#F6F1E5',
+                        champagne: '#EFE6D2',
+                        gold: {
+                            light: '#E5C97B',
+                            DEFAULT: '#C5A059',
+                            dark: '#9E7B38',
+                            deep: '#785A21'
+                        },
+                        charcoal: '#2A2622',
+                        taupe: '#6E655B'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        display: ['"Cinzel"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'luxury': '0 20px 50px -15px rgba(158, 123, 56, 0.15)',
+                        'gold-glow': '0 0 25px rgba(197, 160, 89, 0.35)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Luxury Gold Gradients & Patterns */
+        body {
+            background-color: #FCFBF7;
+            color: #2A2622;
+            overflow-x: hidden;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #9E7B38 0%, #D9B96E 45%, #8F6B29 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #C5A059 0%, #DFC281 50%, #A9833D 100%);
+        }
+
+        .gold-gradient-bg:hover {
+            background: linear-gradient(135deg, #B38E47 0%, #D4B46E 50%, #94702E 100%);
+        }
+
+        .luxury-pattern {
+            background-image: radial-gradient(rgba(197, 160, 89, 0.14) 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
+
+        .gold-border-frame {
+            position: relative;
+        }
+        .gold-border-frame::before {
+            content: '';
+            position: absolute;
+            inset: 10px;
+            border: 1px solid rgba(197, 160, 89, 0.45);
+            pointer-events: none;
+            border-radius: inherit;
+        }
+
+        /* Subtle Floating & Fade Animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(22px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-up {
+            animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F6F1E5; }
+        ::-webkit-scrollbar-thumb { background: #C5A059; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #9E7B38; }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-gold/20 selection:text-gold-deep">
+
+    <!-- ==================== NAVIGATION BAR ==================== -->
+    <nav class="sticky top-0 z-40 bg-ivory/90 backdrop-blur-md border-b border-gold/20 transition-all">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+            <!-- Monogram Logo -->
+            <a href="#invitation" onclick="switchMainView('invitation')" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center bg-cream group-hover:shadow-gold-glow transition-all">
+                    <span class="font-display text-sm font-semibold tracking-wider gold-gradient-text">T&K</span>
+                </div>
+                <div class="hidden sm:block">
+                    <p class="font-serif text-lg font-semibold tracking-wide text-charcoal leading-none">Tishan & Kaveesha</p>
+                    <p class="text-[11px] uppercase tracking-[0.2em] text-gold-dark mt-0.5">09 • 07 • 2027</p>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="flex items-center gap-2 sm:gap-6 text-xs sm:text-sm font-medium">
+                <a href="#schedule" onclick="switchMainView('invitation')" class="text-taupe hover:text-gold-dark transition-colors px-2 py-1.5">Poruwa Schedule</a>
+                <a href="#rsvp" onclick="switchMainView('invitation')" class="text-taupe hover:text-gold-dark transition-colors px-2 py-1.5">RSVP</a>
+                <a href="#share" onclick="switchMainView('invitation')" class="hidden md:inline-block text-taupe hover:text-gold-dark transition-colors px-2 py-1.5">WhatsApp Invite</a>
+                
+                <!-- Admin Toggle Button -->
+                <button id="navAdminBtn" onclick="toggleAdminAccess()" class="ml-1 inline-flex items-center gap-2 px-3.5 py-2 rounded-full border border-gold/50 bg-cream/80 hover:bg-gold hover:text-white text-gold-deep transition-all shadow-sm">
+                    <i class="fa-solid fa-crown text-xs"></i>
+                    <span id="navAdminLabel">Host Admin</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== NOTIFICATION TOAST / MESSAGE BOX ==================== -->
+    <div id="toastBox" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none max-w-sm w-full px-4 sm:px-0">
+        <div class="bg-charcoal text-ivory border border-gold/60 rounded-2xl p-4 shadow-2xl flex items-start gap-3">
+            <div id="toastIcon" class="w-8 h-8 rounded-full gold-gradient-bg flex items-center justify-center text-white shrink-0 mt-0.5">
+                <i class="fa-solid fa-check text-sm"></i>
+            </div>
+            <div class="flex-1">
+                <h4 id="toastTitle" class="font-serif text-base font-semibold text-gold-light">Notification</h4>
+                <p id="toastMessage" class="text-xs text-ivory/90 mt-0.5 leading-relaxed"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== PIN MODAL FOR ADMIN ACCESS ==================== -->
+    <div id="pinModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-charcoal/60 backdrop-blur-sm p-4">
+        <div class="bg-ivory border border-gold/40 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative gold-border-frame">
+            <button onclick="closePinModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-cream text-taupe hover:text-charcoal flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="text-center">
+                <div class="w-14 h-14 rounded-full bg-cream border border-gold/40 mx-auto flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-key text-gold-dark text-xl"></i>
+                </div>
+                <span class="text-[11px] uppercase tracking-[0.25em] text-gold-dark font-semibold">Couple & Family Portal</span>
+                <h3 class="font-serif text-3xl font-semibold text-charcoal mt-1">Host Dashboard</h3>
+                <p class="text-sm text-taupe mt-2">Enter the wedding host PIN to manage guest RSVPs, meal/drink tallies, and WhatsApp invites.</p>
+                
+                <div class="mt-6">
+                    <input type="password" id="adminPinInput" maxlength="6" placeholder="••••" 
+                        onkeydown="if(event.key==='Enter') verifyAdminPin()"
+                        class="w-44 text-center text-2xl tracking-[0.4em] font-semibold bg-white border border-gold/50 rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-gold text-charcoal">
+                    <p id="pinErrorMsg" class="text-xs text-red-600 mt-2 hidden">Incorrect PIN. Hint: Use wedding year 2027.</p>
+                </div>
+
+                <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+                    <button onclick="verifyAdminPin()" class="gold-gradient-bg text-white font-medium text-sm px-6 py-3 rounded-xl shadow-md transition-all">
+                        Unlock Dashboard
+                    </button>
+                    <button onclick="quickDemoUnlock()" class="bg-cream hover:bg-champagne text-gold-deep border border-gold/30 font-medium text-sm px-5 py-3 rounded-xl transition-all">
+                        Instant Demo (PIN: 2027)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- VIEW 1: PUBLIC WEDDING INVITATION & GUEST PORTAL                          -->
+    <!-- ========================================================================= -->
+    <main id="invitationView" class="block">
+
+        <!-- 1. HERO SECTION -->
+        <section id="invitation" class="relative luxury-pattern pt-12 pb-20 sm:pt-20 sm:pb-28 px-4 overflow-hidden">
+            <!-- Decorative Ambient Glows -->
+            <div class="absolute -top-24 -left-24 w-80 h-80 bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute top-1/2 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white/95 backdrop-blur-sm border border-gold/40 rounded-[2rem] p-8 sm:p-14 md:p-16 shadow-luxury gold-border-frame text-center animate-fade-up">
+                    
+                    <!-- Top Ornamental Crest SVG -->
+                    <div class="flex justify-center mb-6">
+                        <svg class="w-48 sm:w-64 h-10 text-gold" viewBox="0 0 260 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 20H95" stroke="currentColor" stroke-width="1" stroke-opacity="0.6"/>
+                            <path d="M165 20H250" stroke="currentColor" stroke-width="1" stroke-opacity="0.6"/>
+                            <path d="M130 6L136 20L130 34L124 20L130 6Z" stroke="currentColor" stroke-width="1.2"/>
+                            <circle cx="110" cy="20" r="3" fill="currentColor" fill-opacity="0.7"/>
+                            <circle cx="150" cy="20" r="3" fill="currentColor" fill-opacity="0.7"/>
+                            <path d="M95 20C102 12 112 12 118 20C112 28 102 28 95 20Z" stroke="currentColor" stroke-width="1"/>
+                            <path d="M165 20C158 12 148 12 142 20C148 28 158 28 165 20Z" stroke="currentColor" stroke-width="1"/>
+                        </svg>
+                    </div>
+
+                    <p class="font-display text-xs sm:text-sm uppercase tracking-[0.3em] text-gold-dark mb-4">
+                        Together With Their Beloved Families
+                    </p>
+
+                    <!-- Personalized Guest Banner (Appears if ?guest=Name is in URL) -->
+                    <div id="personalGuestBanner" class="hidden mb-6 inline-block bg-cream border border-gold/40 rounded-full px-5 py-1.5">
+                        <p class="font-serif italic text-base sm:text-lg text-gold-deep">
+                            Cordially Inviting <span id="invitedGuestNameDisplay" class="font-semibold not-italic underline decoration-gold/60">Honored Guest</span>
+                        </p>
+                    </div>
+
+                    <!-- Couple Names -->
+                    <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl font-semibold tracking-tight leading-none my-2">
+                        <span class="gold-gradient-text block">Tishan Ravishanka</span>
+                        <span class="font-serif italic text-3xl sm:text-4xl text-gold my-2 block font-normal">&amp;</span>
+                        <span class="gold-gradient-text block">Kaveesha Sewmini</span>
+                    </h1>
+
+                    <p class="max-w-xl mx-auto font-serif italic text-lg sm:text-xl text-taupe mt-6 leading-relaxed">
+                        "Two souls with but a single thought, two hearts that beat as one." <br class="hidden sm:inline">
+                        We joyfully request the honor of your presence as we unite in sacred matrimony at the auspicious Poruwa ceremony.
+                    </p>
+
+                    <!-- Divider -->
+                    <div class="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto my-8"></div>
+
+                    <!-- Date & Venue Highlight Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 items-center max-w-2xl mx-auto text-center">
+                        <div class="p-3">
+                            <p class="text-[11px] uppercase tracking-[0.22em] text-gold-dark font-semibold">The Date</p>
+                            <p class="font-serif text-2xl font-semibold text-charcoal mt-1">Friday, July 9</p>
+                            <p class="text-sm text-taupe">2027</p>
+                        </div>
+
+                        <div class="sm:border-x border-gold/30 p-3">
+                            <p class="text-[11px] uppercase tracking-[0.22em] text-gold-dark font-semibold">Auspicious Time</p>
+                            <p class="font-serif text-2xl font-semibold text-charcoal mt-1">9:30 AM</p>
+                            <p class="text-sm text-taupe">Poruwa Nekatha: 10:12 AM</p>
+                        </div>
+
+                        <div class="p-3">
+                            <p class="text-[11px] uppercase tracking-[0.22em] text-gold-dark font-semibold">The Venue</p>
+                            <p class="font-serif text-2xl font-semibold text-charcoal mt-1">Kadawatha</p>
+                            <p class="text-sm text-taupe">Grand Ballroom, Kadawatha</p>
+                        </div>
+                    </div>
+
+                    <!-- Live Countdown Timer -->
+                    <div class="mt-10 bg-cream/80 border border-gold/30 rounded-2xl p-5 sm:p-6 max-w-xl mx-auto">
+                        <p class="text-[11px] uppercase tracking-[0.25em] text-gold-deep font-semibold mb-3">Counting Down To Forever</p>
+                        <div class="grid grid-cols-4 gap-2 sm:gap-4" id="countdownGrid">
+                            <div class="bg-white rounded-xl py-3 px-2 border border-gold/20 shadow-sm">
+                                <span id="cdDays" class="font-serif text-2xl sm:text-4xl font-bold text-charcoal block">000</span>
+                                <span class="text-[10px] sm:text-xs uppercase tracking-widest text-taupe">Days</span>
+                            </div>
+                            <div class="bg-white rounded-xl py-3 px-2 border border-gold/20 shadow-sm">
+                                <span id="cdHours" class="font-serif text-2xl sm:text-4xl font-bold text-charcoal block">00</span>
+                                <span class="text-[10px] sm:text-xs uppercase tracking-widest text-taupe">Hours</span>
+                            </div>
+                            <div class="bg-white rounded-xl py-3 px-2 border border-gold/20 shadow-sm">
+                                <span id="cdMinutes" class="font-serif text-2xl sm:text-4xl font-bold text-charcoal block">00</span>
+                                <span class="text-[10px] sm:text-xs uppercase tracking-widest text-taupe">Mins</span>
+                            </div>
+                            <div class="bg-white rounded-xl py-3 px-2 border border-gold/20 shadow-sm">
+                                <span id="cdSeconds" class="font-serif text-2xl sm:text-4xl font-bold text-gold-dark block">00</span>
+                                <span class="text-[10px] sm:text-xs uppercase tracking-widest text-taupe">Secs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Primary Hero Actions -->
+                    <div class="mt-9 flex flex-wrap items-center justify-center gap-4">
+                        <a href="#rsvp" class="gold-gradient-bg text-white font-medium text-sm sm:text-base px-8 py-3.5 rounded-full shadow-lg hover:shadow-gold-glow transition-all inline-flex items-center gap-2">
+                            <i class="fa-regular fa-envelope-open"></i>
+                            <span>Confirm Your Attendance (RSVP)</span>
+                        </a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Kadawatha+Sri+Lanka" target="_blank" rel="noopener noreferrer" 
+                           class="bg-ivory hover:bg-cream text-charcoal border border-gold/50 font-medium text-sm sm:text-base px-7 py-3.5 rounded-full transition-all inline-flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-gold-dark"></i>
+                            <span>Directions to Kadawatha</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. PORUWA CEREMONY & WEDDING TIMELINE -->
+        <section id="schedule" class="py-16 sm:py-24 px-4 bg-cream/60 border-y border-gold/20">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-14">
+                    <span class="text-xs uppercase tracking-[0.28em] text-gold-dark font-semibold">Sacred Traditions & Festivities</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-charcoal mt-2">Poruwa Ceremony Schedule</h2>
+                    <p class="text-sm sm:text-base text-taupe max-w-xl mx-auto mt-3">
+                        Join us in celebrating our heritage and timeless Sri Lankan wedding customs in Kadawatha on July 9, 2027.
+                    </p>
+                </div>
+
+                <!-- Vertical Timeline -->
+                <div class="relative">
+                    <!-- Center Line (Desktop) / Left Line (Mobile) -->
+                    <div class="absolute left-6 md:left-1/2 top-2 bottom-2 w-px bg-gradient-to-b from-gold/20 via-gold to-gold/20 md:-translate-x-1/2"></div>
+
+                    <div id="timelineContainer" class="space-y-8">
+                        <!-- Timeline Items Rendered by JS for clean maintainability -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. GUEST RSVP & PREFERENCES FORM -->
+        <section id="rsvp" class="py-16 sm:py-24 px-4 luxury-pattern">
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white border border-gold/40 rounded-[2rem] p-6 sm:p-12 shadow-luxury gold-border-frame">
+                    <div class="text-center mb-8">
+                        <span class="text-xs uppercase tracking-[0.28em] text-gold-dark font-semibold">Kindly Respond By June 1, 2027</span>
+                        <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-charcoal mt-2">Guest RSVP</h2>
+                        <p class="text-sm text-taupe mt-2">Please let us know your attendance details, party size, and beverage preference.</p>
+                    </div>
+
+                    <!-- RSVP Form -->
+                    <form id="rsvpForm" onsubmit="handleRsvpSubmit(event)" class="space-y-6">
+                        
+                        <!-- Attendance Radio Cards -->
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider font-semibold text-charcoal mb-3">Will you join us in Kadawatha? *</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="attending" value="Attending" checked onchange="toggleAttendanceFields(true)" class="peer sr-only">
+                                    <div class="p-4 rounded-2xl border-2 border-gold/25 bg-ivory/60 peer-checked:border-gold peer-checked:bg-cream transition-all flex items-center gap-3.5">
+                                        <div class="w-9 h-9 rounded-full bg-white border border-gold/40 flex items-center justify-center text-gold-dark">
+                                            <i class="fa-solid fa-champagne-glasses"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-serif text-lg font-semibold text-charcoal">Joyfully Accept</p>
+                                            <p class="text-xs text-taupe">We will be there to celebrate</p>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="attending" value="Not Attending" onchange="toggleAttendanceFields(false)" class="peer sr-only">
+                                    <div class="p-4 rounded-2xl border-2 border-gold/25 bg-ivory/60 peer-checked:border-gold peer-checked:bg-cream transition-all flex items-center gap-3.5">
+                                        <div class="w-9 h-9 rounded-full bg-white border border-gold/40 flex items-center justify-center text-taupe">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-serif text-lg font-semibold text-charcoal">Regretfully Decline</p>
+                                            <p class="text-xs text-taupe">Sending warm blessings from afar</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Guest Name & Phone -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="guestName" class="block text-xs uppercase tracking-wider font-semibold text-charcoal mb-2">Full Name / Family Name *</label>
+                                <input type="text" id="guestName" required placeholder="e.g., Kasun Perera & Family"
+                                    class="w-full px-4 py-3 rounded-xl bg-ivory/70 border border-gold/35 focus:outline-none focus:border-gold focus:bg-white text-sm transition-all">
+                            </div>
+                            <div>
+                                <label for="guestPhone" class="block text-xs uppercase tracking-wider font-semibold text-charcoal mb-2">WhatsApp / Mobile Number *</label>
+                                <input type="tel" id="guestPhone" required placeholder="e.g., +94 77 123 4567"
+                                    class="w-full px-4 py-3 rounded-xl bg-ivory/70 border border-gold/35 focus:outline-none focus:border-gold focus:bg-white text-sm transition-all">
+                            </div>
+                        </div>
+
+                        <!-- Conditional Fields for Attending Guests -->
+                        <div id="attendingOnlyFields" class="space-y-6 transition-all">
+                            <!-- Adults & Children Counters -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div class="bg-cream/50 border border-gold/25 rounded-2xl p-4 flex items-center justify-between">
+                                    <div>
+                                        <p class="font-semibold text-sm text-charcoal">Adults</p>
+                                        <p class="text-xs text-taupe">Ages 12 and above</p>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <button type="button" onclick="adjustGuestCount('adults', -1)" class="w-9 h-9 rounded-full bg-white border border-gold/40 text-charcoal hover:bg-gold hover:text-white transition-colors flex items-center justify-center">
+                                            <i class="fa-solid fa-minus text-xs"></i>
+                                        </button>
+                                        <input type="number" id="adultsCount" value="2" min="1" max="15" readonly class="w-8 text-center font-serif text-xl font-bold bg-transparent text-charcoal">
+                                        <button type="button" onclick="adjustGuestCount('adults', 1)" class="w-9 h-9 rounded-full bg-white border border-gold/40 text-charcoal hover:bg-gold hover:text-white transition-colors flex items-center justify-center">
+                                            <i class="fa-solid fa-plus text-xs"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="bg-cream/50 border border-gold/25 rounded-2xl p-4 flex items-center justify-between">
+                                    <div>
+                                        <p class="font-semibold text-sm text-charcoal">Children</p>
+                                        <p class="text-xs text-taupe">Under 12 years</p>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <button type="button" onclick="adjustGuestCount('children', -1)" class="w-9 h-9 rounded-full bg-white border border-gold/40 text-charcoal hover:bg-gold hover:text-white transition-colors flex items-center justify-center">
+                                            <i class="fa-solid fa-minus text-xs"></i>
+                                        </button>
+                                        <input type="number" id="childrenCount" value="0" min="0" max="10" readonly class="w-8 text-center font-serif text-xl font-bold bg-transparent text-charcoal">
+                                        <button type="button" onclick="adjustGuestCount('children', 1)" class="w-9 h-9 rounded-full bg-white border border-gold/40 text-charcoal hover:bg-gold hover:text-white transition-colors flex items-center justify-center">
+                                            <i class="fa-solid fa-plus text-xs"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Drinks Preference -->
+                            <div>
+                                <label for="drinksPreference" class="block text-xs uppercase tracking-wider font-semibold text-charcoal mb-2">Drinks & Refreshment Preference *</label>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="drinkPref" value="Welcome Mocktail" checked class="peer sr-only">
+                                        <div class="text-center py-2.5 px-3 rounded-xl border border-gold/30 bg-ivory/70 text-xs sm:text-sm font-medium text-charcoal peer-checked:bg-gold peer-checked:text-white peer-checked:border-gold transition-all">
+                                            🍹 Welcome Mocktail
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="drinkPref" value="Fresh Fruit Juice" class="peer sr-only">
+                                        <div class="text-center py-2.5 px-3 rounded-xl border border-gold/30 bg-ivory/70 text-xs sm:text-sm font-medium text-charcoal peer-checked:bg-gold peer-checked:text-white peer-checked:border-gold transition-all">
+                                            🥭 Fresh Fruit Juice
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="drinkPref" value="Wine & Spirits" class="peer sr-only">
+                                        <div class="text-center py-2.5 px-3 rounded-xl border border-gold/30 bg-ivory/70 text-xs sm:text-sm font-medium text-charcoal peer-checked:bg-gold peer-checked:text-white peer-checked:border-gold transition-all">
+                                            🥂 Wine & Spirits
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="drinkPref" value="Soft Drinks" class="peer sr-only">
+                                        <div class="text-center py-2.5 px-3 rounded-xl border border-gold/30 bg-ivory/70 text-xs sm:text-sm font-medium text-charcoal peer-checked:bg-gold peer-checked:text-white peer-checked:border-gold transition-all">
+                                            🥤 Soft Drinks
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="drinkPref" value="Ceylon Tea / Coffee" class="peer sr-only">
+                                        <div class="text-center py-2.5 px-3 rounded-xl border border-gold/30 bg-ivory/70 text-xs sm:text-sm font-medium text-charcoal peer-checked:bg-gold peer-checked:text-white peer-checked:border-gold transition-all">
+                                            ☕ Ceylon Tea / Coffee
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="drinkPref" value="No Preference" class="peer sr-only">
+                                        <div class="text-center py-2.5 px-3 rounded-xl border border-gold/30 bg-ivory/70 text-xs sm:text-sm font-medium text-charcoal peer-checked:bg-gold peer-checked:text-white peer-checked:border-gold transition-all">
+                                            ✨ No Preference
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Blessing / Wish for the Couple -->
+                        <div>
+                            <label for="guestWish" class="block text-xs uppercase tracking-wider font-semibold text-charcoal mb-2">Blessings & Wishes for Tishan & Kaveesha</label>
+                            <textarea id="guestWish" rows="3" placeholder="Write a heartfelt note or blessing for the bride and groom..."
+                                class="w-full px-4 py-3 rounded-xl bg-ivory/70 border border-gold/35 focus:outline-none focus:border-gold focus:bg-white text-sm transition-all"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="rsvpSubmitBtn" class="w-full gold-gradient-bg text-white font-medium text-base py-4 rounded-xl shadow-lg hover:shadow-gold-glow transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Submit RSVP & Blessings</span>
+                        </button>
+                    </form>
+
+                    <!-- Post-Submission Confirmation Card -->
+                    <div id="rsvpSuccessState" class="hidden text-center py-8">
+                        <div class="w-16 h-16 rounded-full gold-gradient-bg text-white flex items-center justify-center mx-auto mb-4 shadow-gold-glow">
+                            <i class="fa-solid fa-check text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-3xl font-semibold text-charcoal">Thank You, <span id="confirmedGuestName" class="text-gold-dark"></span>!</h3>
+                        <p class="text-sm text-taupe max-w-md mx-auto mt-2">
+                            Your response has been recorded in Tishan &amp; Kaveesha's wedding guestbook. We look forward to celebrating with you in Kadawatha on July 9, 2027.
+                        </p>
+                        <button onclick="resetRsvpForm()" class="mt-6 text-xs uppercase tracking-widest font-semibold text-gold-dark hover:text-charcoal underline">
+                            Submit Another Response
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Live Guest Blessings Wall -->
+                <div class="mt-14">
+                    <div class="text-center mb-6">
+                        <span class="text-xs uppercase tracking-[0.25em] text-gold-dark font-semibold">Wall of Love</span>
+                        <h3 class="font-serif text-3xl font-semibold text-charcoal mt-1">Warm Wishes From Guests</h3>
+                    </div>
+                    <div id="wishesWall" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Wishes populated dynamically -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. WHATSAPP INVITATION LINK GENERATOR -->
+        <section id="share" class="py-16 sm:py-20 px-4 bg-cream/70 border-t border-gold/20">
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white border border-gold/40 rounded-[2rem] p-6 sm:p-10 shadow-luxury">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gold/20 pb-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-[0.25em] text-gold-dark font-semibold">Digital Invitation Suite</span>
+                            <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-charcoal mt-1">WhatsApp Invitation Generator</h2>
+                            <p class="text-sm text-taupe mt-1">Create a personalized WhatsApp invitation card message with a direct RSVP link.</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-2xl bg-[#25D366]/15 text-[#128C7E] flex items-center justify-center shrink-0">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="waGuestName" class="block text-xs uppercase tracking-wider font-semibold text-charcoal mb-2">Guest Name (Optional)</label>
+                            <input type="text" id="waGuestName" oninput="updateWhatsAppPreview()" placeholder="e.g., Mr. & Mrs. Silva"
+                                class="w-full px-4 py-2.5 rounded-xl bg-ivory border border-gold/35 focus:outline-none focus:border-gold text-sm">
+                        </div>
+                        <div>
+                            <label for="waGuestPhone" class="block text-xs uppercase tracking-wider font-semibold text-charcoal mb-2">Recipient Phone (Optional)</label>
+                            <input type="tel" id="waGuestPhone" oninput="updateWhatsAppPreview()" placeholder="e.g., 94771234567"
+                                class="w-full px-4 py-2.5 rounded-xl bg-ivory border border-gold/35 focus:outline-none focus:border-gold text-sm">
+                        </div>
+                    </div>
+
+                    <!-- Formatted Message Preview -->
+                    <div class="mt-5">
+                        <label class="block text-xs uppercase tracking-wider font-semibold text-charcoal mb-2">Formatted Invitation Preview</label>
+                        <div class="bg-[#EFEAE2] border border-gold/30 rounded-2xl p-4 sm:p-5 relative">
+                            <div class="bg-white rounded-xl p-4 shadow-sm text-xs sm:text-sm text-charcoal whitespace-pre-line font-sans leading-relaxed" id="waMessagePreview"></div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+                        <a id="waDirectLink" href="#" target="_blank" rel="noopener noreferrer" 
+                           class="flex-1 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-medium text-sm py-3.5 px-6 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Send via WhatsApp</span>
+                        </a>
+                        <button type="button" onclick="copyWhatsAppInvite()" 
+                            class="flex-1 bg-ivory hover:bg-cream text-charcoal border border-gold/50 font-medium text-sm py-3.5 px-6 rounded-xl transition-all flex items-center justify-center gap-2">
+                            <i class="fa-regular fa-copy text-gold-dark"></i>
+                            <span>Copy Invite &amp; Link</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-charcoal text-ivory/80 py-12 px-4 text-center border-t border-gold/30">
+            <div class="max-w-4xl mx-auto">
+                <div class="w-12 h-12 rounded-full border border-gold/60 flex items-center justify-center mx-auto mb-4">
+                    <span class="font-display text-base text-gold-light">T&amp;K</span>
+                </div>
+                <h3 class="font-serif text-2xl sm:text-3xl text-gold-light">Tishan Ravishanka &amp; Kaveesha Sewmini</h3>
+                <p class="text-xs uppercase tracking-[0.25em] text-ivory/60 mt-2">July 9, 2027 • Kadawatha, Sri Lanka</p>
+                
+                <div class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ivory/50">
+                    <p>Crafted with love for our wedding celebration.</p>
+                    <button onclick="toggleAdminAccess()" class="text-gold-light hover:underline flex items-center gap-1.5">
+                        <i class="fa-solid fa-lock text-[10px]"></i>
+                        <span>Couple &amp; Organizer Admin Portal</span>
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- ========================================================================= -->
+    <!-- VIEW 2: ADMIN DASHBOARD (GUEST MANAGEMENT & ANALYTICS)                    -->
+    <!-- ========================================================================= -->
+    <main id="adminView" class="hidden min-h-screen bg-ivory pb-20">
+        <!-- Admin Top Banner -->
+        <div class="bg-charcoal text-ivory border-b border-gold/40 py-8 px-4">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <div class="flex items-center gap-2 text-gold-light text-xs uppercase tracking-[0.25em] font-semibold">
+                        <i class="fa-solid fa-crown"></i>
+                        <span>Wedding Organizer Suite</span>
+                    </div>
+                    <h1 class="font-serif text-3xl sm:text-4xl font-semibold text-white mt-1">Tishan &amp; Kaveesha — Guest Dashboard</h1>
+                    <p class="text-xs sm:text-sm text-ivory/70 mt-1">July 9, 2027 • Kadawatha • Real-time RSVP, Headcount &amp; Beverage Analytics</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-3">
+                    <button onclick="exportGuestsCSV()" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs sm:text-sm font-medium px-4 py-2.5 rounded-xl transition-all inline-flex items-center gap-2">
+                        <i class="fa-solid fa-file-csv text-gold-light"></i>
+                        <span>Export CSV</span>
+                    </button>
+                    <button onclick="switchMainView('invitation')" class="gold-gradient-bg text-white text-xs sm:text-sm font-medium px-5 py-2.5 rounded-xl shadow-md transition-all inline-flex items-center gap-2">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Back to Invitation</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 mt-8 space-y-8">
+            
+            <!-- KPI Summary Cards -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div class="bg-white border border-gold/30 rounded-2xl p-5 shadow-sm">
+                    <div class="flex items-center justify-between text-gold-dark mb-2">
+                        <span class="text-xs uppercase tracking-wider font-semibold">Total Confirmed Guests</span>
+                        <i class="fa-solid fa-users text-lg"></i>
+                    </div>
+                    <p id="statTotalHeadcount" class="font-serif text-4xl font-bold text-charcoal">0</p>
+                    <p id="statAttendingParties" class="text-xs text-taupe mt-1">0 attending families/parties</p>
+                </div>
+
+                <div class="bg-white border border-gold/30 rounded-2xl p-5 shadow-sm">
+                    <div class="flex items-center justify-between text-gold-dark mb-2">
+                        <span class="text-xs uppercase tracking-wider font-semibold">Adults Count</span>
+                        <i class="fa-solid fa-user-tie text-lg"></i>
+                    </div>
+                    <p id="statAdultsCount" class="font-serif text-4xl font-bold text-charcoal">0</p>
+                    <p class="text-xs text-taupe mt-1">Full banquet seating</p>
+                </div>
+
+                <div class="bg-white border border-gold/30 rounded-2xl p-5 shadow-sm">
+                    <div class="flex items-center justify-between text-gold-dark mb-2">
+                        <span class="text-xs uppercase tracking-wider font-semibold">Children Count</span>
+                        <i class="fa-solid fa-child-reaching text-lg"></i>
+                    </div>
+                    <p id="statChildrenCount" class="font-serif text-4xl font-bold text-charcoal">0</p>
+                    <p class="text-xs text-taupe mt-1">Under 12 years</p>
+                </div>
+
+                <div class="bg-white border border-gold/30 rounded-2xl p-5 shadow-sm">
+                    <div class="flex items-center justify-between text-taupe mb-2">
+                        <span class="text-xs uppercase tracking-wider font-semibold">Declined / Regrets</span>
+                        <i class="fa-regular fa-calendar-xmark text-lg"></i>
+                    </div>
+                    <p id="statDeclinedCount" class="font-serif text-4xl font-bold text-charcoal">0</p>
+                    <p class="text-xs text-taupe mt-1">Sent warm wishes</p>
+                </div>
+            </div>
+
+            <!-- Drinks Preference Analytics & Quick WhatsApp Personalizer -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                
+                <!-- Drinks Summary Breakdown -->
+                <div class="lg:col-span-2 bg-white border border-gold/35 rounded-2xl p-6 shadow-sm">
+                    <div class="flex items-center justify-between mb-5">
+                        <div>
+                            <h3 class="font-serif text-2xl font-semibold text-charcoal">Drinks &amp; Refreshment Breakdown</h3>
+                            <p class="text-xs text-taupe">Calculated by total attending headcount per party preference</p>
+                        </div>
+                        <span class="text-xs bg-cream text-gold-deep px-3 py-1 rounded-full border border-gold/30 font-medium">Catering Tally</span>
+                    </div>
+                    <div id="drinksChartContainer" class="space-y-4">
+                        <!-- Rendered dynamically -->
+                    </div>
+                </div>
+
+                <!-- Quick Invite Creator inside Admin -->
+                <div class="bg-cream/80 border border-gold/40 rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[11px] uppercase tracking-[0.2em] text-gold-dark font-semibold">Quick Dispatch</span>
+                        <h3 class="font-serif text-2xl font-semibold text-charcoal mt-1">Send Personal WhatsApp Invite</h3>
+                        <p class="text-xs text-taupe mt-1">Generate a custom link that greets the guest by name on the invitation hero.</p>
+                        
+                        <div class="mt-4 space-y-3">
+                            <div>
+                                <label class="block text-xs font-semibold text-charcoal mb-1">Guest / Family Name</label>
+                                <input type="text" id="adminWaName" placeholder="e.g., Dr. Nimal & Family" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-gold/35 text-sm focus:outline-none focus:border-gold">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-charcoal mb-1">WhatsApp Number (with country code)</label>
+                                <input type="tel" id="adminWaPhone" placeholder="e.g., 94771234567" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-gold/35 text-sm focus:outline-none focus:border-gold">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 flex flex-col gap-2">
+                        <button onclick="sendAdminWhatsAppInvite()" class="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-medium text-sm py-3 rounded-xl shadow-sm transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-base"></i>
+                            <span>Open WhatsApp &amp; Send</span>
+                        </button>
+                        <button onclick="copyAdminCustomLink()" class="w-full bg-white hover:bg-ivory text-charcoal border border-gold/40 font-medium text-xs py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-link text-gold-dark"></i>
+                            <span>Copy Personalized Invite Link</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guest List Management Table -->
+            <div class="bg-white border border-gold/35 rounded-2xl shadow-sm overflow-hidden">
+                <div class="p-6 border-b border-gold/20 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <h3 class="font-serif text-2xl font-semibold text-charcoal">Guest RSVP Directory</h3>
+                        <p class="text-xs text-taupe">Search, filter, send WhatsApp reminders, or manage guest entries</p>
+                    </div>
+
+                    <!-- Search & Filter Controls -->
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <div class="relative">
+                            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-taupe text-xs"></i>
+                            <input type="text" id="adminSearchInput" oninput="renderAdminDashboard()" placeholder="Search guest or phone..."
+                                class="pl-9 pr-4 py-2 rounded-xl bg-ivory border border-gold/35 text-sm focus:outline-none focus:border-gold w-full sm:w-56">
+                        </div>
+                        <select id="adminStatusFilter" onchange="renderAdminDashboard()" class="px-3.5 py-2 rounded-xl bg-ivory border border-gold/35 text-sm focus:outline-none focus:border-gold">
+                            <option value="ALL">All Responses</option>
+                            <option value="Attending">Attending Only</option>
+                            <option value="Not Attending">Not Attending</option>
+                        </select>
+                        <select id="adminDrinkFilter" onchange="renderAdminDashboard()" class="px-3.5 py-2 rounded-xl bg-ivory border border-gold/35 text-sm focus:outline-none focus:border-gold">
+                            <option value="ALL">All Drinks</option>
+                            <option value="Welcome Mocktail">Welcome Mocktail</option>
+                            <option value="Fresh Fruit Juice">Fresh Fruit Juice</option>
+                            <option value="Wine & Spirits">Wine &amp; Spirits</option>
+                            <option value="Soft Drinks">Soft Drinks</option>
+                            <option value="Ceylon Tea / Coffee">Ceylon Tea / Coffee</option>
+                            <option value="No Preference">No Preference</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Responsive Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-cream/70 border-b border-gold/25 text-[11px] uppercase tracking-wider text-taupe">
+                                <th class="py-3.5 px-5 font-semibold">Guest / Family</th>
+                                <th class="py-3.5 px-4 font-semibold">Status</th>
+                                <th class="py-3.5 px-4 font-semibold text-center">Adults</th>
+                                <th class="py-3.5 px-4 font-semibold text-center">Children</th>
+                                <th class="py-3.5 px-4 font-semibold">Drinks Preference</th>
+                                <th class="py-3.5 px-4 font-semibold">Blessing / Note</th>
+                                <th class="py-3.5 px-5 font-semibold text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="guestTableBody" class="divide-y divide-gold/15 text-sm">
+                            <!-- Rows rendered dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="emptyTableState" class="hidden py-12 text-center">
+                    <p class="font-serif text-xl text-taupe">No matching guest records found.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ==================== FIREBASE & APPLICATION LOGIC ==================== -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // -------------------- 1. INITIAL SAMPLE DATA --------------------
+        // Pre-populated realistic Sri Lankan wedding guests so the Admin Dashboard & Wishes Wall look rich immediately
+        const SAMPLE_GUESTS = [
+            {
+                id: 'sample-1',
+                isSample: true,
+                name: 'Mr. & Mrs. Ruwan Jayasinghe',
+                phone: '+94 77 452 8890',
+                attending: 'Attending',
+                adults: 2,
+                children: 1,
+                drink: 'Welcome Mocktail',
+                wish: 'Wishing Tishan and Kaveesha a lifetime of boundless joy, harmony, and prosperity as you step onto the Poruwa together!',
+                createdAt: Date.now() - 86400000 * 3
+            },
+            {
+                id: 'sample-2',
+                isSample: true,
+                name: 'Dr. Chaminda & Dilini Fernando',
+                phone: '+94 71 892 3311',
+                attending: 'Attending',
+                adults: 2,
+                children: 0,
+                drink: 'Wine & Spirits',
+                wish: 'May your love story grow brighter with every passing year. Excited to celebrate with you both in Kadawatha!',
+                createdAt: Date.now() - 86400000 * 2
+            },
+            {
+                id: 'sample-3',
+                isSample: true,
+                name: 'Nethmi & Kasun Wickramasinghe',
+                phone: '+94 76 310 9942',
+                attending: 'Attending',
+                adults: 2,
+                children: 2,
+                drink: 'Fresh Fruit Juice',
+                wish: 'Congratulations to the sweetest couple! May Triple Gem bless your union forever.',
+                createdAt: Date.now() - 86400000
+            },
+            {
+                id: 'sample-4',
+                isSample: true,
+                name: 'Sahan Rajapaksha',
+                phone: '+94 77 901 2234',
+                attending: 'Attending',
+                adults: 1,
+                children: 0,
+                drink: 'Soft Drinks',
+                wish: 'So happy for you brother! Looking forward to the big day.',
+                createdAt: Date.now() - 43200000
+            },
+            {
+                id: 'sample-5',
+                isSample: true,
+                name: 'Mrs. Malini Dissanayake',
+                phone: '+94 70 554 1120',
+                attending: 'Not Attending',
+                adults: 0,
+                children: 0,
+                drink: 'No Preference',
+                wish: 'Sending my heartfelt blessings from Melbourne. Wishing Tishan & Kaveesha a blissful married life!',
+                createdAt: Date.now() - 21600000
+            }
+        ];
+
+        // -------------------- 2. PORUWA CEREMONY TIMELINE DATA --------------------
+        const PORUWA_SCHEDULE = [
+            {
+                time: '09:00 AM',
+                title: 'Arrival of Honored Guests',
+                subtitle: 'Traditional Welcome',
+                desc: 'Guests arrive at the Kadawatha Grand Ballroom and are welcomed with refreshing herbal & fruit welcome drinks.',
+                icon: 'fa-door-open'
+            },
+            {
+                time: '09:30 AM',
+                title: 'Ceremonial Arrival of the Groom',
+                subtitle: 'Magul Bera & Kandyan Dancers',
+                desc: 'Tishan Ravishanka arrives in traditional Nilame attire accompanied by auspicious Magul Bera drumming and Wes dancers.',
+                icon: 'fa-drum'
+            },
+            {
+                time: '09:50 AM',
+                title: 'Arrival of the Radiant Bride',
+                subtitle: 'Bridal Procession',
+                desc: 'Kaveesha Sewmini enters gracefully in traditional Kandyan Osariya, escorted by her family to the decorated Poruwa.',
+                icon: 'fa-gem'
+            },
+            {
+                time: '10:12 AM',
+                title: 'Sacred Poruwa Ceremony (Nekatha)',
+                subtitle: 'Auspicious Matrimonial Rites',
+                desc: 'Stepping onto the Poruwa at the auspicious Nekatha, exchanging betel leaves, tying of the nuptial thread (Atapirikara & golden thread), and pouring of sacred water.',
+                icon: 'fa-hands-praying'
+            },
+            {
+                time: '10:45 AM',
+                title: 'Jayamangala Gatha & Ashtaka Blessings',
+                subtitle: 'Hymns of Prosperity',
+                desc: 'Young girls chant the sacred Jayamangala Gatha verses followed by traditional Ashtaka blessings invoking peace and longevity.',
+                icon: 'fa-music'
+            },
+            {
+                time: '11:30 AM',
+                title: 'Lighting of the Oil Lamp & Cake Cutting',
+                subtitle: 'Celebration & Toast',
+                desc: 'Lighting the traditional brass Pahana with both families, followed by cutting the wedding cake and raising a celebratory toast.',
+                icon: 'fa-cake-candles'
+            },
+            {
+                time: '12:30 PM',
+                title: 'Royal Wedding Banquet Lunch',
+                subtitle: 'Feast & Fellowship',
+                desc: 'A lavish Sri Lankan & international wedding luncheon served with curated beverages and live acoustic melodies.',
+                icon: 'fa-utensils'
+            },
+            {
+                time: '03:30 PM',
+                title: 'Going Away Ceremony',
+                subtitle: 'Farewell Blessings',
+                desc: 'Tishan & Kaveesha depart in their going-away attire amidst warm wishes, showering of petals, and joyful farewells.',
+                icon: 'fa-car-side'
+            }
+        ];
+
+        // Global State
+        let liveGuests = [];
+        let allGuests = [...SAMPLE_GUESTS];
+        let isAdminUnlocked = false;
+        let db = null;
+        let auth = null;
+        let currentUser = null;
+        let appId = 'default-app-id';
+
+        // -------------------- 3. FIREBASE PERSISTENT STORAGE INIT --------------------
+        async function initDatabase() {
+            try {
+                if (typeof __firebase_config !== 'undefined' && __firebase_config) {
+                    const firebaseConfig = JSON.parse(__firebase_config);
+                    appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+                    
+                    const app = initializeApp(firebaseConfig);
+                    auth = getAuth(app);
+                    db = getFirestore(app);
+
+                    // RULE 3: Authenticate BEFORE querying
+                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                        await signInWithCustomToken(auth, __initial_auth_token);
+                    } else {
+                        await signInAnonymously(auth);
+                    }
+                    currentUser = auth.currentUser;
+
+                    if (currentUser) {
+                        // RULE 1 & 2: Strict public collection path, simple collection query
+                        const rsvpCol = collection(db, 'artifacts', appId, 'public', 'data', 'wedding_rsvps');
+                        onSnapshot(rsvpCol, (snapshot) => {
+                            liveGuests = [];
+                            snapshot.forEach((docSnap) => {
+                                liveGuests.push({ id: docSnap.id, isSample: false, ...docSnap.data() });
+                            });
+                            mergeAndRefreshAllViews();
+                        }, (err) => {
+                            console.warn('Firestore snapshot listener fallback:', err);
+                        });
+                    }
+                }
+            } catch (error) {
+                console.warn('Running in local interactive mode:', error);
+            }
+        }
+
+        function mergeAndRefreshAllViews() {
+            // Sort live guests newest first, followed by sample entries
+            const sortedLive = [...liveGuests].sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+            allGuests = [...sortedLive, ...SAMPLE_GUESTS];
+            renderWishesWall();
+            renderAdminDashboard();
+        }
+
+        // -------------------- 4. RENDER TIMELINE & WISHES --------------------
+        function renderTimeline() {
+            const container = document.getElementById('timelineContainer');
+            if (!container) return;
+
+            container.innerHTML = PORUWA_SCHEDULE.map((item, idx) => {
+                const isEven = idx % 2 === 0;
+                return `
+                <div class="relative flex flex-col md:flex-row items-start md:items-center ${isEven ? 'md:flex-row-reverse' : ''} gap-4 md:gap-8 pl-14 md:pl-0">
+                    
+                    <!-- Center / Left Gold Medallion Icon -->
+                    <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white border-2 border-gold shadow-md flex items-center justify-center text-gold-dark z-10">
+                        <i class="fa-solid ${item.icon} text-sm"></i>
+                    </div>
+
+                    <!-- Content Card -->
+                    <div class="w-full md:w-[calc(50%-2.25rem)] bg-white border border-gold/30 hover:border-gold/70 rounded-2xl p-5 sm:p-6 shadow-sm transition-all">
+                        <div class="flex items-center justify-between gap-2 mb-1.5">
+                            <span class="inline-block bg-cream text-gold-deep text-xs font-semibold px-3 py-1 rounded-full border border-gold/30">
+                                ${item.time}
+                            </span>
+                            <span class="text-[11px] uppercase tracking-wider text-taupe font-medium">${item.subtitle}</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-semibold text-charcoal mt-1">${item.title}</h3>
+                        <p class="text-xs sm:text-sm text-taupe mt-1.5 leading-relaxed">${item.desc}</p>
+                    </div>
+
+                    <!-- Spacer for opposite side on desktop -->
+                    <div class="hidden md:block md:w-[calc(50%-2.25rem)]"></div>
+                </div>
+                `;
+            }).join('');
+        }
+
+        function renderWishesWall() {
+            const wall = document.getElementById('wishesWall');
+            if (!wall) return;
+
+            const guestsWithWishes = allGuests.filter(g => g.wish && g.wish.trim().length > 0).slice(0, 6);
+            wall.innerHTML = guestsWithWishes.map(g => `
+                <div class="bg-white/90 border border-gold/30 rounded-2xl p-5 shadow-sm flex flex-col justify-between">
+                    <p class="font-serif italic text-base sm:text-lg text-charcoal leading-relaxed">
+                        <i class="fa-solid fa-quote-left text-gold/50 text-xs mr-1.5"></i>
+                        ${escapeHtml(g.wish)}
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-gold/15 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-gold-deep">— ${escapeHtml(g.name)}</span>
+                        <span class="text-[11px] text-taupe">${g.attending === 'Attending' ? 'Attending' : 'Warm Wishes'}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // -------------------- 5. COUNTDOWN TIMER TO JULY 9, 2027 --------------------
+        function startCountdown() {
+            // July 9, 2027 at 09:30 AM Sri Lanka Time (UTC+5:30)
+            const weddingDate = new Date('2027-07-09T09:30:00+05:30').getTime();
+
+            function update() {
+                const now = Date.now();
+                const diff = weddingDate - now;
+
+                if (diff <= 0) {
+                    document.getElementById('cdDays').textContent = '000';
+                    document.getElementById('cdHours').textContent = '00';
+                    document.getElementById('cdMinutes').textContent = '00';
+                    document.getElementById('cdSeconds').textContent = '00';
+                    return;
+                }
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('cdDays').textContent = String(days).padStart(3, '0');
+                document.getElementById('cdHours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('cdMinutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('cdSeconds').textContent = String(seconds).padStart(2, '0');
+            }
+
+            update();
+            setInterval(update, 1000);
+        }
+
+        // -------------------- 6. RSVP FORM HANDLERS --------------------
+        window.toggleAttendanceFields = function(isAttending) {
+            const fields = document.getElementById('attendingOnlyFields');
+            if (isAttending) {
+                fields.classList.remove('hidden');
+            } else {
+                fields.classList.add('hidden');
+            }
+        };
+
+        window.adjustGuestCount = function(type, delta) {
+            const input = document.getElementById(type === 'adults' ? 'adultsCount' : 'childrenCount');
+            const min = type === 'adults' ? 1 : 0;
+            const max = type === 'adults' ? 15 : 10;
+            let val = parseInt(input.value || 0, 10) + delta;
+            if (val < min) val = min;
+            if (val > max) val = max;
+            input.value = val;
+        };
+
+        window.handleRsvpSubmit = async function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('rsvpSubmitBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Recording RSVP...</span>';
+
+            const attending = document.querySelector('input[name="attending"]:checked').value;
+            const name = document.getElementById('guestName').value.trim();
+            const phone = document.getElementById('guestPhone').value.trim();
+            const adults = attending === 'Attending' ? parseInt(document.getElementById('adultsCount').value, 10) : 0;
+            const children = attending === 'Attending' ? parseInt(document.getElementById('childrenCount').value, 10) : 0;
+            const drink = attending === 'Attending' ? document.querySelector('input[name="drinkPref"]:checked').value : 'No Preference';
+            const wish = document.getElementById('guestWish').value.trim();
+
+            const newEntry = {
+                name,
+                phone,
+                attending,
+                adults,
+                children,
+                drink,
+                wish,
+                createdAt: Date.now()
+            };
+
+            try {
+                if (db && currentUser) {
+                    const rsvpCol = collection(db, 'artifacts', appId, 'public', 'data', 'wedding_rsvps');
+                    await addDoc(rsvpCol, newEntry);
+                } else {
+                    // Fallback immediate state update
+                    liveGuests.unshift({ id: 'local-' + Date.now(), isSample: false, ...newEntry });
+                    mergeAndRefreshAllViews();
+                }
+
+                document.getElementById('confirmedGuestName').textContent = name;
+                document.getElementById('rsvpForm').classList.add('hidden');
+                document.getElementById('rsvpSuccessState').classList.remove('hidden');
+                showToast('RSVP Confirmed', `Thank you ${name}! Your response has been saved.`);
+            } catch (err) {
+                console.error('Error saving RSVP:', err);
+                // Fallback so user experience is never blocked
+                liveGuests.unshift({ id: 'local-' + Date.now(), isSample: false, ...newEntry });
+                mergeAndRefreshAllViews();
+                document.getElementById('confirmedGuestName').textContent = name;
+                document.getElementById('rsvpForm').classList.add('hidden');
+                document.getElementById('rsvpSuccessState').classList.remove('hidden');
+                showToast('RSVP Recorded', `Thank you ${name}! Your response has been saved.`);
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> <span>Submit RSVP & Blessings</span>';
+            }
+        };
+
+        window.resetRsvpForm = function() {
+            document.getElementById('rsvpForm').reset();
+            document.getElementById('adultsCount').value = 2;
+            document.getElementById('childrenCount').value = 0;
+            toggleAttendanceFields(true);
+            document.getElementById('rsvpSuccessState').classList.add('hidden');
+            document.getElementById('rsvpForm').classList.remove('hidden');
+        };
+
+        // -------------------- 7. WHATSAPP INVITATION LINK GENERATOR --------------------
+        function buildInvitationUrl(guestName) {
+            const baseUrl = window.location.href.split('?')[0].split('#')[0];
+            if (guestName && guestName.trim()) {
+                return `${baseUrl}?guest=${encodeURIComponent(guestName.trim())}`;
+            }
+            return baseUrl;
+        }
+
+        function buildWhatsAppMessageText(guestName) {
+            const greeting = guestName && guestName.trim() 
+                ? `Dear *${guestName.trim()}*,` 
+                : `Dear Family & Friends,`;
+            const inviteUrl = buildInvitationUrl(guestName);
+
+            return `✨ *WEDDING INVITATION* ✨\n\n${greeting}\n\nTogether with their families,\n*Tishan Ravishanka & Kaveesha Sewmini*\ncordially invite you to grace their auspicious Poruwa Ceremony & Wedding Reception.\n\n📅 *Date:* Friday, July 9, 2027\n⏰ *Poruwa Nekatha:* 10:12 AM (Arrival at 9:30 AM)\n📍 *Venue:* Kadawatha\n\nKindly view our digital invitation, Poruwa schedule, and confirm your RSVP (including Adults/Children & Drinks preference) via the link below:\n👉 ${inviteUrl}\n\nWe eagerly look forward to celebrating this blessed milestone with you! 💛🥂`;
+        }
+
+        window.updateWhatsAppPreview = function() {
+            const guestName = document.getElementById('waGuestName').value;
+            const rawPhone = document.getElementById('waGuestPhone').value.replace(/[^0-9]/g, '');
+            const msg = buildWhatsAppMessageText(guestName);
+
+            document.getElementById('waMessagePreview').textContent = msg;
+            const waUrl = rawPhone 
+                ? `https://wa.me/${rawPhone}?text=${encodeURIComponent(msg)}`
+                : `https://wa.me/?text=${encodeURIComponent(msg)}`;
+            document.getElementById('waDirectLink').href = waUrl;
+        };
+
+        window.copyWhatsAppInvite = function() {
+            const msg = document.getElementById('waMessagePreview').textContent;
+            copyTextToClipboard(msg, 'Invitation Copied', 'Formatted WhatsApp message & RSVP link copied to clipboard.');
+        };
+
+        // -------------------- 8. ADMIN DASHBOARD & PIN ACCESS --------------------
+        window.toggleAdminAccess = function() {
+            if (isAdminUnlocked) {
+                const adminView = document.getElementById('adminView');
+                if (adminView.classList.contains('hidden')) {
+                    switchMainView('admin');
+                } else {
+                    switchMainView('invitation');
+                }
+            } else {
+                const modal = document.getElementById('pinModal');
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.getElementById('adminPinInput').value = '';
+                document.getElementById('pinErrorMsg').classList.add('hidden');
+                setTimeout(() => document.getElementById('adminPinInput').focus(), 100);
+            }
+        };
+
+        window.closePinModal = function() {
+            const modal = document.getElementById('pinModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        };
+
+        window.verifyAdminPin = function() {
+            const val = document.getElementById('adminPinInput').value.trim();
+            if (val === '2027') {
+                isAdminUnlocked = true;
+                closePinModal();
+                switchMainView('admin');
+                showToast('Welcome Hosts', 'Admin Dashboard unlocked for Tishan & Kaveesha.');
+            } else {
+                document.getElementById('pinErrorMsg').classList.remove('hidden');
+            }
+        };
+
+        window.quickDemoUnlock = function() {
+            document.getElementById('adminPinInput').value = '2027';
+            verifyAdminPin();
+        };
+
+        window.switchMainView = function(view) {
+            const invView = document.getElementById('invitationView');
+            const admView = document.getElementById('adminView');
+            const navLabel = document.getElementById('navAdminLabel');
+
+            if (view === 'admin') {
+                invView.classList.add('hidden');
+                admView.classList.remove('hidden');
+                navLabel.textContent = 'View Invite';
+                renderAdminDashboard();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                admView.classList.add('hidden');
+                invView.classList.remove('hidden');
+                navLabel.textContent = isAdminUnlocked ? 'Dashboard' : 'Host Admin';
+            }
+        };
+
+        window.renderAdminDashboard = function() {
+            // 1. Compute Stats
+            let totalAdults = 0;
+            let totalChildren = 0;
+            let attendingParties = 0;
+            let declinedParties = 0;
+
+            const drinkTallies = {
+                'Welcome Mocktail': 0,
+                'Fresh Fruit Juice': 0,
+                'Wine & Spirits': 0,
+                'Soft Drinks': 0,
+                'Ceylon Tea / Coffee': 0,
+                'No Preference': 0
+            };
+
+            allGuests.forEach(g => {
+                if (g.attending === 'Attending') {
+                    attendingParties++;
+                    const a = Number(g.adults) || 0;
+                    const c = Number(g.children) || 0;
+                    totalAdults += a;
+                    totalChildren += c;
+                    const partySize = a + c;
+                    const dKey = drinkTallies.hasOwnProperty(g.drink) ? g.drink : 'No Preference';
+                    drinkTallies[dKey] += partySize;
+                } else {
+                    declinedParties++;
+                }
+            });
+
+            const totalHeadcount = totalAdults + totalChildren;
+
+            document.getElementById('statTotalHeadcount').textContent = totalHeadcount;
+            document.getElementById('statAttendingParties').textContent = `${attendingParties} attending families/parties`;
+            document.getElementById('statAdultsCount').textContent = totalAdults;
+            document.getElementById('statChildrenCount').textContent = totalChildren;
+            document.getElementById('statDeclinedCount').textContent = declinedParties;
+
+            // 2. Render Drinks Bars
+            const drinksContainer = document.getElementById('drinksChartContainer');
+            const maxDrink = Math.max(...Object.values(drinkTallies), 1);
+
+            drinksContainer.innerHTML = Object.entries(drinkTallies).map(([drinkName, count]) => {
+                const pct = Math.round((count / maxDrink) * 100);
+                return `
+                <div>
+                    <div class="flex justify-between text-xs sm:text-sm mb-1">
+                        <span class="font-medium text-charcoal">${drinkName}</span>
+                        <span class="font-semibold text-gold-deep">${count} guests</span>
+                    </div>
+                    <div class="w-full h-2.5 bg-cream rounded-full overflow-hidden border border-gold/20">
+                        <div class="h-full gold-gradient-bg rounded-full transition-all duration-500" style="width: ${pct}%"></div>
+                    </div>
+                </div>
+                `;
+            }).join('');
+
+            // 3. Filter & Render Table
+            const query = (document.getElementById('adminSearchInput')?.value || '').toLowerCase();
+            const statusFilter = document.getElementById('adminStatusFilter')?.value || 'ALL';
+            const drinkFilter = document.getElementById('adminDrinkFilter')?.value || 'ALL';
+
+            const filtered = allGuests.filter(g => {
+                const matchesSearch = g.name.toLowerCase().includes(query) || (g.phone || '').toLowerCase().includes(query);
+                const matchesStatus = statusFilter === 'ALL' || g.attending === statusFilter;
+                const matchesDrink = drinkFilter === 'ALL' || g.drink === drinkFilter;
+                return matchesSearch && matchesStatus && matchesDrink;
+            });
+
+            const tbody = document.getElementById('guestTableBody');
+            const emptyState = document.getElementById('emptyTableState');
+
+            if (filtered.length === 0) {
+                tbody.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            emptyState.classList.add('hidden');
+
+            tbody.innerHTML = filtered.map(g => {
+                const isAttending = g.attending === 'Attending';
+                const badgeClass = isAttending 
+                    ? 'bg-emerald-50 text-emerald-700 border-emerald-200' 
+                    : 'bg-rose-50 text-rose-700 border-rose-200';
+                
+                const cleanPhone = (g.phone || '').replace(/[^0-9]/g, '');
+                const waMsg = buildWhatsAppMessageText(g.name);
+                const waHref = cleanPhone 
+                    ? `https://wa.me/${cleanPhone}?text=${encodeURIComponent(waMsg)}`
+                    : `https://wa.me/?text=${encodeURIComponent(waMsg)}`;
+
+                return `
+                <tr class="hover:bg-ivory/80 transition-colors">
+                    <td class="py-3.5 px-5">
+                        <div class="font-semibold text-charcoal flex items-center gap-2">
+                            <span>${escapeHtml(g.name)}</span>
+                            ${g.isSample ? '<span class="text-[10px] uppercase tracking-wider bg-cream text-taupe px-1.5 py-0.5 rounded border border-gold/25">Sample</span>' : '<span class="text-[10px] uppercase tracking-wider bg-gold/15 text-gold-deep px-1.5 py-0.5 rounded">Live</span>'}
+                        </div>
+                        <div class="text-xs text-taupe mt-0.5">${escapeHtml(g.phone || 'No phone')}</div>
+                    </td>
+                    <td class="py-3.5 px-4">
+                        <span class="inline-block px-2.5 py-1 rounded-full text-xs font-medium border ${badgeClass}">
+                            ${g.attending}
+                        </span>
+                    </td>
+                    <td class="py-3.5 px-4 text-center font-semibold text-charcoal">${isAttending ? g.adults : '—'}</td>
+                    <td class="py-3.5 px-4 text-center font-semibold text-charcoal">${isAttending ? g.children : '—'}</td>
+                    <td class="py-3.5 px-4">
+                        <span class="text-xs font-medium text-gold-deep bg-cream px-2.5 py-1 rounded-lg border border-gold/25">
+                            ${isAttending ? escapeHtml(g.drink) : 'N/A'}
+                        </span>
+                    </td>
+                    <td class="py-3.5 px-4 max-w-xs">
+                        <p class="text-xs text-taupe truncate" title="${escapeHtml(g.wish || '')}">
+                            ${escapeHtml(g.wish || '—')}
+                        </p>
+                    </td>
+                    <td class="py-3.5 px-5 text-right whitespace-nowrap">
+                        <div class="inline-flex items-center gap-2">
+                            <a href="${waHref}" target="_blank" rel="noopener noreferrer" title="Send WhatsApp Invite"
+                               class="w-8 h-8 rounded-lg bg-[#25D366]/15 hover:bg-[#25D366] text-[#128C7E] hover:text-white flex items-center justify-center transition-colors">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                            <button onclick="deleteGuestEntry('${g.id}', ${Boolean(g.isSample)})" title="Remove Entry"
+                               class="w-8 h-8 rounded-lg bg-rose-50 hover:bg-rose-600 text-rose-600 hover:text-white flex items-center justify-center transition-colors">
+                                <i class="fa-regular fa-trash-can text-xs"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                `;
+            }).join('');
+        };
+
+        window.deleteGuestEntry = async function(id, isSample) {
+            if (isSample) {
+                const idx = SAMPLE_GUESTS.findIndex(s => s.id === id);
+                if (idx !== -1) SAMPLE_GUESTS.splice(idx, 1);
+                mergeAndRefreshAllViews();
+                showToast('Entry Removed', 'Sample guest entry removed from view.');
+                return;
+            }
+
+            try {
+                if (db && currentUser) {
+                    await deleteDoc(doc(db, 'artifacts', appId, 'public', 'data', 'wedding_rsvps', id));
+                } else {
+                    liveGuests = liveGuests.filter(g => g.id !== id);
+                    mergeAndRefreshAllViews();
+                }
+                showToast('RSVP Deleted', 'The guest record has been removed.');
+            } catch (err) {
+                console.error('Delete error:', err);
+                liveGuests = liveGuests.filter(g => g.id !== id);
+                mergeAndRefreshAllViews();
+                showToast('RSVP Removed', 'The guest record has been removed.');
+            }
+        };
+
+        window.sendAdminWhatsAppInvite = function() {
+            const name = document.getElementById('adminWaName').value;
+            const phone = document.getElementById('adminWaPhone').value.replace(/[^0-9]/g, '');
+            const msg = buildWhatsAppMessageText(name);
+            const url = phone 
+                ? `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`
+                : `https://wa.me/?text=${encodeURIComponent(msg)}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
+        };
+
+        window.copyAdminCustomLink = function() {
+            const name = document.getElementById('adminWaName').value;
+            const link = buildInvitationUrl(name);
+            copyTextToClipboard(link, 'Personalized Link Copied', name ? `Custom invite link for ${name} copied!` : 'Wedding invitation link copied!');
+        };
+
+        window.exportGuestsCSV = function() {
+            const headers = ['Guest Name', 'Phone', 'Attendance Status', 'Adults', 'Children', 'Total Guests', 'Drinks Preference', 'Blessing/Wish'];
+            const rows = allGuests.map(g => {
+                const a = g.attending === 'Attending' ? (Number(g.adults) || 0) : 0;
+                const c = g.attending === 'Attending' ? (Number(g.children) || 0) : 0;
+                return [
+                    `"${(g.name || '').replace(/"/g, '""')}"`,
+                    `"${(g.phone || '').replace(/"/g, '""')}"`,
+                    `"${g.attending}"`,
+                    a,
+                    c,
+                    a + c,
+                    `"${(g.drink || '').replace(/"/g, '""')}"`,
+                    `"${(g.wish || '').replace(/"/g, '""')}"`
+                ].join(',');
+            });
+
+            const csvContent = 'data:text/csv;charset=utf-8,' + [headers.join(','), ...rows].join('\n');
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement('a');
+            link.setAttribute('href', encodedUri);
+            link.setAttribute('download', 'Tishan_Kaveesha_Wedding_Guests_2027.csv');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            showToast('CSV Exported', 'Your complete guest list & drinks tally has been downloaded.');
+        };
+
+        // -------------------- 9. UTILITIES (CLIPBOARD, TOAST, URL PARAMS) --------------------
+        function copyTextToClipboard(text, title, message) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                showToast(title, message);
+            } catch (err) {
+                showToast('Copy Ready', 'Please copy the text from the preview box.');
+            }
+            document.body.removeChild(textarea);
+        }
+
+        let toastTimer = null;
+        window.showToast = function(title, message) {
+            const box = document.getElementById('toastBox');
+            document.getElementById('toastTitle').textContent = title;
+            document.getElementById('toastMessage').textContent = message;
+            
+            box.classList.remove('translate-y-24', 'opacity-0');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                box.classList.add('translate-y-24', 'opacity-0');
+            }, 4000);
+        };
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        function checkUrlPersonalization() {
+            const params = new URLSearchParams(window.location.search);
+            const guestParam = params.get('guest');
+            if (guestParam && guestParam.trim()) {
+                const cleanName = guestParam.trim();
+                document.getElementById('invitedGuestNameDisplay').textContent = cleanName;
+                document.getElementById('personalGuestBanner').classList.remove('hidden');
+                document.getElementById('guestName').value = cleanName;
+            }
+        }
+
+        // -------------------- 10. BOOTSTRAP ON LOAD --------------------
+        window.addEventListener('DOMContentLoaded', () => {
+            renderTimeline();
+            startCountdown();
+            checkUrlPersonalization();
+            updateWhatsAppPreview();
+            mergeAndRefreshAllViews();
+            initDatabase();
+        });
+    </script>
+</body>
+</html>
